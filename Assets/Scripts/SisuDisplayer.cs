@@ -1,12 +1,12 @@
 using TMPro;
 using UnityEngine;
 
-public class CurrencyUI : MonoBehaviour
+public class SisuUI : MonoBehaviour
 {
     public TextMeshProUGUI text;
 
     void Update()
     {
-        text.text = "Sisu: " + CurrencyManager.Instance.currency.ToString();
+        text.text = "Sisu: " + SisuManager.Instance.currency.ToString();
     }
 }

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class CurrencyManager : MonoBehaviour
+public class SisuManager : MonoBehaviour
 {
-    public static CurrencyManager Instance;
+    public static SisuManager Instance;
 
     public int currency = 0;
 
