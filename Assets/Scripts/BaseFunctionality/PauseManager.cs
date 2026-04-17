@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
-    [SerializeField] private GameObject PauseMenu;
+    [SerializeField] private GameObject PauseScreen;
     [SerializeField] private GameObject PauseButton;
     public bool GamePaused = false;
 
@@ -10,7 +10,7 @@ public class PauseManager : MonoBehaviour
     {
         GamePaused = true;
         Time.timeScale = 0f;
-        PauseMenu.SetActive(true);
+        PauseScreen.SetActive(true);
         PauseButton.SetActive(false);
     }
 
@@ -18,7 +18,7 @@ public class PauseManager : MonoBehaviour
     {
         GamePaused = false;
         Time.timeScale = 1f;
-        PauseMenu.SetActive(false);
+        PauseScreen.SetActive(false);
         PauseButton.SetActive(true);
     }
 
