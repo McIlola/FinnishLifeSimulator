@@ -16,6 +16,7 @@ public class FishHitDetection : MonoBehaviour
         targetZone.localPosition = new Vector3(0, randomY, 0);
     }
     public int rewardAmount = 10;
+    public int punishmentAmount = 5;
     public GameObject fishPrefab;
     public Transform fishContainer;
     void Update()
@@ -56,6 +57,7 @@ public class FishHitDetection : MonoBehaviour
         else
         {
             Debug.Log("Missed:(");
+            SisuManager.Instance.SpendCurrency(punishmentAmount);
         }
         RandomizeTargetZone();
     }
