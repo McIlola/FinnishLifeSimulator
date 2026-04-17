@@ -19,9 +19,10 @@ public class FishHitDetection : MonoBehaviour
     public int punishmentAmount = 5;
     public GameObject fishPrefab;
     public Transform fishContainer;
+    public PauseManager pauseManager;
     void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && !pauseManager.GamePaused)
         {
             CheckHit();
         }

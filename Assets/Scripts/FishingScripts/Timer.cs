@@ -16,6 +16,7 @@ public class StartGame : MonoBehaviour
     {
         if (timeLeft < 0)
         {
+            Time.timeScale = 0f;
             indicator.SetActive(false);
         }
         else
