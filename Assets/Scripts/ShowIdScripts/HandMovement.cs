@@ -42,12 +42,12 @@ public class HandMovement : MonoBehaviour
 
     void ApplyRandomMovement()
     {
-        nextRMTime = Time.time + Random.Range(minInterval, maxInterval);
-
         Vector2 direction = Random.insideUnitCircle.normalized;
         float strength = Random.Range(minForce, maxForce);
 
         currentForce = direction * strength;
+
+        ScheduleNextRM();
     }
 
     void Update()
