@@ -4,8 +4,9 @@ public class GrabAndDraggable : MonoBehaviour
 {
     public SpriteRenderer[] outlineRenderer;
     private Rigidbody2D rb;
+    [SerializeField] private ForagingCursors.TargetSpriteCursor targetSpriteCursor;
     bool isDragging;
-    Collider2D objectCollider;
+    private Collider2D objectCollider;
     public int rewardAmount = 5;
 
     void Start()
@@ -62,16 +63,28 @@ public class GrabAndDraggable : MonoBehaviour
         }
     }
 
+    void OnMouseEnter()
+    {
+        ForagingCursors.Instance.SetToMode(targetSpriteCursor);
+    }
+
+    void OnMouseExit()
+    {
+        ForagingCursors.Instance.SetToMode(ForagingCursors.TargetSpriteCursor.Default);
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Cleanup")
         {
+            ForagingCursors.Instance.SetToMode(ForagingCursors.TargetSpriteCursor.Default);
             Destroy(this.gameObject);
         }
         if (other.tag == "Bucket")
         {
             if (rb.bodyType == RigidbodyType2D.Dynamic)
             {
+                ForagingCursors.Instance.SetToMode(ForagingCursors.TargetSpriteCursor.Default);
                 Destroy(this.gameObject);
                 SisuManager.Instance.AddCurrency(rewardAmount);
             }

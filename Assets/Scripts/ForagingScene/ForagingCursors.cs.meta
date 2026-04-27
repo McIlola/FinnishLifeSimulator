@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2c8533c1ed34d3242ad40a5a0f1d1324
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cursorSpriteNormal: {instanceID: 0}
+  - cursorSpriteFlyswatter: {fileID: 2800000, guid: 3e6bcbe9d897ba84a98a1577c89ec29f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

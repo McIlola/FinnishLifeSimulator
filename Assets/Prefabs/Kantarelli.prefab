@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabAndDraggable
   outlineRenderer: []
+  targetSpriteCursor: 1
   rewardAmount: 5
 --- !u!50 &6848285279741462554
 Rigidbody2D:
