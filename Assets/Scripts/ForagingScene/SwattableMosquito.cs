@@ -21,7 +21,6 @@ public class SwattableMosquito : MonoBehaviour
     private float nextRMTime;
 
     public float cameraSpeed;
-    public bool gamePaused = false;
 
 
 
@@ -49,8 +48,6 @@ public class SwattableMosquito : MonoBehaviour
 
     void Update()
     {
-        if (gamePaused) return;
-
         if (Time.time >= nextRMTime)
         {
             ApplyRandomMovement();
@@ -89,7 +86,6 @@ public class SwattableMosquito : MonoBehaviour
             velocity.x *= -1;
         }
 
-        // Bottom / Top
         if (pos.y < min.y)
         {
             pos.y = min.y;
@@ -108,8 +104,7 @@ public class SwattableMosquito : MonoBehaviour
     {
         if (currentSize.x < maxSize)
         {
-            currentSize += new Vector3(growth, growth, 0f);
-
+            currentSize += new Vector3(growth, growth, 0f) * Time.deltaTime;
             transform.localScale = currentSize;
         }
     }
