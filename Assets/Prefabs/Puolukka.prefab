@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabAndDraggable
   outlineRenderer: []
+  targetSpriteCursor: 1
   rewardAmount: 5
 --- !u!50 &6045025369504715565
 Rigidbody2D:
@@ -412,7 +413,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.3, y: 0.28}
+  m_Size: {x: 0.4, y: 0.35}
   m_EdgeRadius: 0
 --- !u!95 &6594974185948310194
 Animator:

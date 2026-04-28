@@ -922,6 +922,7 @@ Transform:
   - {fileID: 1455097715}
   - {fileID: 1075118991}
   - {fileID: 931255967}
+  - {fileID: 1219836959}
   m_Father: {fileID: 829137379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1075118990
@@ -976,6 +977,58 @@ MonoBehaviour:
   spawnOffset: 3
   minInterval: 4
   maxInterval: 6
+--- !u!1 &1219836958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1219836959}
+  - component: {fileID: 1219836960}
+  m_Layer: 0
+  m_Name: SpawnerMosquito
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219836959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219836958}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 962182320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219836960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219836958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846399a3926378040ab94099a8ebf347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnItem
+  foragingItem: {fileID: 6937215634227735803, guid: 886bf9342f8287641a516edc8bc74b4c, type: 3}
+  minX: -6
+  maxX: 6
+  minY: -1.75
+  maxY: 2.5
+  spawnOffset: 10
+  minInterval: 7
+  maxInterval: 10
 --- !u!1 &1309227174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1528,54 @@ RectTransform:
   m_AnchoredPosition: {x: -7.62, y: -0.92}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2012326583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2012326585}
+  - component: {fileID: 2012326586}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2012326585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012326583}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.55212, y: 0.95618, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2012326586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012326583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8533c1ed34d3242ad40a5a0f1d1324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForagingCursors
+  cursorSpriteNormal: {fileID: 2800000, guid: 519aba5c1a2607047aabe041f958837a, type: 3}
+  cursorSpritePicker: {fileID: 2800000, guid: db1c24e70ac3e044c90c7e6b8881f4bc, type: 3}
+  cursorSpriteFlyswatter: {fileID: 2800000, guid: 3e6bcbe9d897ba84a98a1577c89ec29f, type: 3}
+  cursorPosition: {x: 0, y: 0}
 --- !u!1 &2051778249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,3 +1722,4 @@ SceneRoots:
   - {fileID: 364356573}
   - {fileID: 1601263327}
   - {fileID: 700911725}
+  - {fileID: 2012326585}
