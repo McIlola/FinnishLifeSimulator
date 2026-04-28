@@ -104,4 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6a24299607d4c609426306aceea3ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveFish
-  speed: 20
+  speed: 10
+  horizontalVariation: 0.5

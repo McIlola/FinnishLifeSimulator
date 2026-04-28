@@ -2,23 +2,16 @@ using UnityEngine;
 
 public class MoveTo : MonoBehaviour {
     public float speed = 10f;
-    private Vector3 targetPosition;
+    public float horizontalVariation = 0.5f;
+
+    private Vector2 direction;
+
     void Start() {
-        SetNewTarget();
+        float randomX = Random.Range(-horizontalVariation, horizontalVariation);
+        direction = new Vector2(randomX, 1f).normalized;
     }
 
     void Update() {
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            targetPosition,
-            speed * Time.deltaTime
-        );
-
-        
-    }
-
-    void SetNewTarget() {
-        float randomX = Random.Range(-50f, 50f);
-        targetPosition = new Vector3(randomX, 0f, 0f);
+        transform.position += (Vector3)(direction * speed * Time.deltaTime);
     }
 }
