@@ -2,20 +2,21 @@ using UnityEngine;
 
 public class SwattableMosquito : MonoBehaviour
 {
+    public SpriteRenderer[] outlineRenderer;
     [SerializeField] private ForagingCursors.TargetSpriteCursor targetSpriteCursor;
     private Collider2D objectCollider;
     private Vector3 currentSize;
 
     [Header ("Growth")]
-    public float maxSize = 2f;
-    public float growth = 0.0001f;
+    public float maxSize = 10f;
+    public float growth = 0.2f;
 
     [Header ("Random movement")]
     public float damping = 0.95f;
-    public float minInterval = 1f;
-    public float maxInterval = 1.5f;
-    public float minForce = 20f;
-    public float maxForce = 50f;
+    public float minInterval = 0.5f;
+    public float maxInterval = 1.0f;
+    public float minForce = 10f;
+    public float maxForce = 20f;
     private Vector2 velocity;
     private Vector2 currentForce;
     private float nextRMTime;
@@ -26,6 +27,12 @@ public class SwattableMosquito : MonoBehaviour
 
     void Start()
     {
+        outlineRenderer = new SpriteRenderer[transform.childCount];
+        for (int i = 0; i < outlineRenderer.Length; i++)
+        {
+            outlineRenderer[i] = transform.GetChild(i).GetComponent<SpriteRenderer>();
+        }
+
         objectCollider = GetComponent<Collider2D>();
         currentSize = transform.localScale;
         ScheduleNextRM();
@@ -70,8 +77,8 @@ public class SwattableMosquito : MonoBehaviour
         Camera cam = Camera.main;
 
 
-        Vector3 min = cam.ScreenToWorldPoint(new Vector2(0, 0));
-        Vector3 max = cam.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        Vector3 min = cam.ScreenToWorldPoint(new Vector2(50, 50));
+        Vector3 max = cam.ScreenToWorldPoint(new Vector2(Screen.width-50, Screen.height-50));
 
         Vector3 pos = transform.position;
 
@@ -112,11 +119,21 @@ public class SwattableMosquito : MonoBehaviour
     void OnMouseEnter()
     {
         ForagingCursors.Instance.SetToMode(targetSpriteCursor);
+
+        foreach(SpriteRenderer outline in outlineRenderer)
+        {
+            outline.color = Color.red;
+        }
     }
 
     void OnMouseExit()
     {
         ForagingCursors.Instance.SetToMode(ForagingCursors.TargetSpriteCursor.Default);
+
+        foreach(SpriteRenderer outline in outlineRenderer)
+        {
+            outline.color = Color.black;
+        }
     }
 
     void OnMouseDown()

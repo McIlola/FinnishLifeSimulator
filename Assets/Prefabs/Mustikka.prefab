@@ -454,8 +454,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabAndDraggable
   outlineRenderer: []
+  clip: {fileID: 8300000, guid: 2742fb7b5887bca439d18d5b1015f003, type: 3}
   targetSpriteCursor: 1
-  rewardAmount: 5
+  rewardAmount: 3
 --- !u!50 &2473637788672341647
 Rigidbody2D:
   serializedVersion: 5
