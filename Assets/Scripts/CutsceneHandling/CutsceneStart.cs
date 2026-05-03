@@ -5,9 +5,11 @@ using UnityEngine;
 public class CutsceneStart : MonoBehaviour
 {
     private CutsceneHandler cutsceneHandler;
+    [SerializeField] private PauseManager pauseManager;
 
     public void Start()
     {
+        pauseManager.OtherResume();
         cutsceneHandler = GetComponent<CutsceneHandler>();
     }
 
