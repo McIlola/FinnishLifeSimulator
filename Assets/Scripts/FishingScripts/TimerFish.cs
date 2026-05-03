@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.Diagnostics;
 
-public class StartGame : MonoBehaviour
+public class FishTimer : MonoBehaviour
 {
 
     public float timeLeft = 60.0f;
-    public TextMeshProUGUI startText;
+    public TextMeshProUGUI TimerText;
     public GameObject indicator;
     public GameObject gameOverView;
 
@@ -25,7 +25,7 @@ public class StartGame : MonoBehaviour
         else
         {
             timeLeft -= Time.deltaTime;
-            startText.text = (timeLeft).ToString("0");
+            TimerText.text = (timeLeft).ToString("0");
         }
     }
 } 

@@ -20,6 +20,7 @@ public class FishHitDetection : MonoBehaviour
     public GameObject fishPrefab;
     public Transform fishContainer;
     public PauseManager pauseManager;
+    public AudioSource audioSource;
     void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame && !pauseManager.GamePaused)
@@ -54,6 +55,7 @@ public class FishHitDetection : MonoBehaviour
             Debug.Log("Caught fish!");
             SisuManager.Instance.AddCurrency(rewardAmount);
             SpawnFish();
+            audioSource.Play();
         }
         else
         {
