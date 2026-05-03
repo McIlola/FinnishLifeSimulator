@@ -25,10 +25,13 @@ public class PauseManager : MonoBehaviour
 
     public void TogglePause()
     {
-        if (GamePaused)
-            ResumeGame();
-        else
-            PauseGame();
+        if (otherPause == false)
+        {
+            if (GamePaused)
+                ResumeGame();
+            else
+                PauseGame();
+        }
     }
 
     public void OtherPause()

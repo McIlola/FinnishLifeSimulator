@@ -21,7 +21,7 @@ public class HandInsideBoundary : MonoBehaviour
         }
     }
 
-    bool IsFullyInside()
+    public bool IsFullyInside()
     {
         Bounds boundaryBounds = boundary.bounds;
         Bounds handBounds = hand.bounds;

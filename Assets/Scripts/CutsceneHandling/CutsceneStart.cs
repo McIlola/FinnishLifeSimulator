@@ -5,7 +5,6 @@ using UnityEngine;
 public class CutsceneStart : MonoBehaviour
 {
     private CutsceneHandler cutsceneHandler;
-    [SerializeField] private GameObject startGameScreen; //fix later
 
     public void Start()
     {
@@ -16,6 +15,5 @@ public class CutsceneStart : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
             cutsceneHandler.PlayNextElement();
-            startGameScreen.SetActive(false); //fix later
     }
 }

@@ -529,7 +529,8 @@ MonoBehaviour:
   minInterval: 0.5
   maxInterval: 1
   minForce: 10
-  maxForce: 12
+  maxForce: 15
+  swatSound: {fileID: 8300000, guid: 3cc0d10b471257c4b8eb5cad1bb63c33, type: 3}
   cameraSpeed: 2
 --- !u!95 &-4221578721236266433
 Animator:

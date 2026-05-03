@@ -6,7 +6,9 @@ public class CutsceneMoveObject : CutsceneBase
 {
     [SerializeField] private Vector3 targetPosition;
     [SerializeField] private Transform targetObject;
-    [SerializeField] private GameObject startGameScreen;
+    [SerializeField] private StartGameBouncer startGameScreen;
+    public AudioSource audioSource;
+    public AudioClip moveHandAudio;
 
     public override void Execute()
     {
@@ -18,6 +20,7 @@ public class CutsceneMoveObject : CutsceneBase
         Vector3 originalPosition = targetObject.position;
         float startTime = Time.time;
         float elapsedTime = 0;
+        audioSource.PlayOneShot(moveHandAudio, 1);
         
         while(elapsedTime < duration)
         {
@@ -28,7 +31,7 @@ public class CutsceneMoveObject : CutsceneBase
         }
 
         targetObject.position = targetPosition;
-        startGameScreen.SetActive(true);
+        startGameScreen.Begin();
         cutsceneHandler.PlayNextElement();
     }
 }

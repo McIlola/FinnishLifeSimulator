@@ -16,10 +16,11 @@ public class SwattableMosquito : MonoBehaviour
     public float minInterval = 0.5f;
     public float maxInterval = 1.0f;
     public float minForce = 10f;
-    public float maxForce = 20f;
+    public float maxForce = 15f;
     private Vector2 velocity;
     private Vector2 currentForce;
     private float nextRMTime;
+    public AudioClip swatSound;
 
     public float cameraSpeed;
 
@@ -139,6 +140,7 @@ public class SwattableMosquito : MonoBehaviour
     void OnMouseDown()
     {
         ForagingCursors.Instance.SetToMode(ForagingCursors.TargetSpriteCursor.Default);
+        AudioSource.PlayClipAtPoint(swatSound, transform.position);
         Destroy(this.gameObject);
     }
 }

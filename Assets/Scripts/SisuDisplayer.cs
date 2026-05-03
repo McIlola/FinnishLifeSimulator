@@ -7,6 +7,6 @@ public class SisuUI : MonoBehaviour
 
     void Update()
     {
-        text.text = "Sisu: " + SisuManager.Instance.currency.ToString();
+        text.text = SisuManager.Instance.currency.ToString();
     }
 }

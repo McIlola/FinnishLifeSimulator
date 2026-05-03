@@ -3,7 +3,7 @@ using UnityEngine;
 public class GrabAndDraggable : MonoBehaviour
 {
     public SpriteRenderer[] outlineRenderer;
-    public AudioClip clip;
+    public AudioClip bucketSound;
     private Rigidbody2D rb;
     [SerializeField] private ForagingCursors.TargetSpriteCursor targetSpriteCursor;
     bool isDragging;
@@ -86,7 +86,7 @@ public class GrabAndDraggable : MonoBehaviour
             if (rb.bodyType == RigidbodyType2D.Dynamic)
             {
                 ForagingCursors.Instance.SetToMode(ForagingCursors.TargetSpriteCursor.Default);
-                AudioSource.PlayClipAtPoint(clip, transform.position);
+                AudioSource.PlayClipAtPoint(bucketSound, transform.position);
                 Destroy(this.gameObject);
                 SisuManager.Instance.AddCurrency(rewardAmount);
             }

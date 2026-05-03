@@ -15,6 +15,6 @@ public class StartGameDisplay : MonoBehaviour
     {
         startGameScreen.SetActive(false);
         playerMovement.movementEnabled = true;
-        gameStart.Begin();
+        gameStart.StartButtonPressed();
     }
 }

@@ -9,6 +9,8 @@ public class CutsceneApproachBartender : CutsceneBase
     [SerializeField] private Vector3 offset;
     [SerializeField] private float bobbingAmount;
     [SerializeField] private float bobbingSpeed;
+    public AudioSource audioSource;
+    public AudioClip stepsAudio;
     private Camera cam;
 
     public override void Execute()
@@ -25,6 +27,7 @@ public class CutsceneApproachBartender : CutsceneBase
         float originalSize = cam.orthographicSize;
         float startTime = Time.time;
         float elapsedTime = 0;
+        audioSource.PlayOneShot(stepsAudio, 1);
         
         while(elapsedTime < duration)
         {
