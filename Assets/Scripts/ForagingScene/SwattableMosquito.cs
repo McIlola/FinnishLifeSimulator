@@ -6,6 +6,7 @@ public class SwattableMosquito : MonoBehaviour
     [SerializeField] private ForagingCursors.TargetSpriteCursor targetSpriteCursor;
     private Collider2D objectCollider;
     private Vector3 currentSize;
+    public int rewardAmount = 5;
 
     [Header ("Growth")]
     public float maxSize = 10f;
@@ -141,6 +142,7 @@ public class SwattableMosquito : MonoBehaviour
     {
         ForagingCursors.Instance.SetToMode(ForagingCursors.TargetSpriteCursor.Default);
         AudioSource.PlayClipAtPoint(swatSound, transform.position);
+        SisuManager.Instance.AddCurrency(rewardAmount);
         Destroy(this.gameObject);
     }
 }

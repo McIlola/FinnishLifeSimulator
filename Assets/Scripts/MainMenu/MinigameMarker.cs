@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class MinigameMarker : MonoBehaviour
 {
+    public string levelID;
     private Collider2D objectCollider;
     public SpriteRenderer[] outlineRenderer;
     [SerializeField] private GameObject minigamePopUp;
     void Start()
     {
+        if (CompletedLevels.completedLevels.Contains(levelID))
+        {
+            gameObject.SetActive(false);
+        }
         objectCollider = GetComponent<Collider2D>();
         outlineRenderer = new SpriteRenderer[transform.childCount];
 
